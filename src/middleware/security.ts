@@ -7,6 +7,12 @@ export const apiKeyAuth = (
     res: Response,
     next: NextFunction
 ): void => {
+    // Skip API key check for health endpoint
+    if (req.path === '/health') {
+        next();
+        return;
+    }
+
     // Skip API key check if not configured (development mode)
     if (!config.security.apiKey) {
         next();

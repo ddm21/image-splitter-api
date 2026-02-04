@@ -2,10 +2,9 @@
 
 > **Note:** All API requests require the `x-api-key` header with your API key (set in `.env` file as `API_KEY`).
 
-### Test 1: Health Check
+### Test 1: Health Check (No API Key Required)
 ```bash
-curl http://localhost:3000/health \
-  -H "x-api-key: your-secret-api-key-here"
+curl http://localhost:3000/health
 ```
 
 ### Test 2: Split Image - Binary Output (Blocks)
